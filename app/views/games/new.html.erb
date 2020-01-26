@@ -4,14 +4,16 @@
 
 <ul class="list-inline">
   <% @letters.each do |letter| %>
-    <li class="list-inline-item letter m-3 p-2 pl-4 pr-4 bg-light border shadow-sm rounded"><%= letter %></li>
+    <li class="list-inline-item letter m-3 p-2 pl-4 pr-4 bg-light border shadow-sm rounded">
+      <%= letter %>
+    </li>
   <% end %>
 </ul>
 
 <!-- <p>What is the longest word you can find?</p> -->
 
 <div class="form-container">
-  <form action="/score" method="post" class="" id="my-form">
+  <form action="score" method="post" class="" id="my-form">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <%= hidden_field_tag :letters, @letters.join %>
     <%= hidden_field_tag :timestamp_load, Time.now %>
